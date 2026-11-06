@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <!-- 关键：移动端自适应配置 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电报：@gv419</title>
+
+	        <script>
+
+    let presentTime = (new Date()).getTime(),
+
+        hrefWithoutSearch = location.protocol + '//' + location.host + location.pathname;
+
+
+
+    if (localStorage.getItem('previousHref') === null) {
+
+        localStorage.setItem('previousHref', hrefWithoutSearch + "?v=" + presentTime);
+
+        localStorage.setItem('previousAccessTime', presentTime);
+
+        location.href = hrefWithoutSearch + "?v=" + presentTime;
+
+    } else {
+
+        let interval = presentTime - parseInt(localStorage.getItem('previousAccessTime'), 10);
+
+        if (interval > 1000) {
+
+            localStorage.setItem('previousAccessTime', presentTime);
+
+            location.href = hrefWithoutSearch + "?v=" + presentTime;
+
+        }
+
+    }
+
+    </script>
+
+    <style>
+        /* 全局样式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft Yahei", sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background-color: #f5f7fa;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        /* 标题样式 */
+        .nav-title {
+            font-size: 2.2rem;
+            color: #2c3e50;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        /* 导航容器 - 核心响应式布局 */
+        .nav-container {
+            width: 100%;
+            max-width: 900px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px 35px; /* 链接间距 上下/左右 */
+        }
+
+        /* 文字链接样式 */
+        .nav-link {
+            display: inline-block;
+            font-size: 1.1rem;
+            color: #34495e;
+            text-decoration: none;
+            padding: 12px 24px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: all 0.2s ease;
+        }
+
+        /* 鼠标悬浮效果 */
+        .nav-link:hover {
+            color: #3498db;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.2);
+        }
+
+        /* 底部备注 */
+        .footer {
+            margin-top: 60px;
+            color: #999;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        /* 手机端单独适配（屏幕小于 768px） */
+        @media (max-width: 768px) {
+            .nav-title {
+                font-size: 1.8rem;
+                margin-bottom: 30px;
+            }
+            .nav-link {
+                font-size: 1rem;
+                padding: 10px 20px;
+                width: 42%;
+                text-align: center;
+            }
+            .nav-container {
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 页面标题 -->
+    <h1 class="nav-title">电报：@gv419</h1>
+
+    <!-- 导航链接区域 【在这里修改你的链接和文字】 -->
+    <div class="nav-container">
+        <a href="mrgx.html" class="nav-link">今日更新</a>
+        <a href="gdhj.html" class="nav-link">各大合集</a>
+		<a href="jp7.html" class="nav-link">精品资源7</a>
+        <a href="jp6.html" class="nav-link">精品资源6</a>
+        <a href="jp5.html" class="nav-link">精品资源5</a>
+        <a href="jp4.html" class="nav-link">精品资源4</a>
+        <a href="jp3.html" class="nav-link">精品资源3</a>
+        <a href="jp2.html" class="nav-link">精品资源2</a>
+        <a href="jp1.html" class="nav-link">精品资源1</a>
+
+    </div>
+
+    <!-- 底部 -->
+    <div class="footer">
+        电报：@gv419/推特：gv419s/Bluesky：@gv419/potato：igv419 欢迎关注，其他均为假冒!
+    </div>
+</body>
+</html>
